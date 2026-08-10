@@ -9,25 +9,23 @@ def home():
              "Welcome to the FastAPI application! Start workign with me and get ultra level experiance"}
 
 
-@app.put("/put")
+@app.put("/putData")
 def putData():
-    return{
-        "message":"This is Put Data"
-    }
+    return True
 
-@app.patch("/patch")
+@app.patch("/patchData")
 def patchData():
-    return{
-        "message":"Patch Data"
-    }
-@app.delete("/delete")
+    return [
+        "Rahim","Karim",12,14.2,True,False
+    ]
+@app.delete("/deleteDat")
 def deleteDat():
     return{
-        "message":"delete data"
+        "message","delete data"
     }
 
-@app.get("/get")
+@app.get("/readData")
 def readData():
-    return{
-        "message":"Read the message"
-    }
+    return( 
+        "message","Read the message"
+    )
