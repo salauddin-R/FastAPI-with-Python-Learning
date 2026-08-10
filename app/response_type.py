@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse,FileResponse
 from fastapi import HTTPException
 import uvicorn
 
@@ -41,4 +41,12 @@ async def HttpExceptionHandling():
     return HTTPException(
         status_code=404,
         detail="Give Error the server"
+    )
+
+@app.get("/file-download")
+async def fileDownloadHandling():
+    return FileResponse(
+        path="myPic.jpeg",
+        filename="download_mypic.jpeg",
+        media_type="image/jpeg"
     )
